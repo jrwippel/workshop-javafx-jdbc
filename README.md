@@ -9,7 +9,7 @@
   Clicar no projeto com botão direito
   Selecionar a opção open module setting
   Selecionar Modules/dependencies
-  Adicionar Library e informar o caminhodas librarys do javaFX.
+  Adicionar Library e informar o caminhodas librarys do javaFX e tambem da libray do acesso ao SQL:mysql-connector-java-8.0.27.jar
   
 3) Adicionar variáveis de ambiente no Builder de execução
   Acessar o Main -> Edit Configrations
