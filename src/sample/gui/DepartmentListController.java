@@ -48,7 +48,9 @@ public class DepartmentListController implements Initializable {
     @FXML
     public void onBtNewAction(ActionEvent actionEvent){
         Stage parentStage = Utils.currentStage(actionEvent);
-        createDialogForm("/sample/gui/DepartmentForm.fxml", parentStage);
+        Department obj = new Department();
+
+        createDialogForm(obj,"/sample/gui/DepartmentForm.fxml", parentStage);
     }
 
     //Inversão de controle
@@ -81,10 +83,14 @@ public class DepartmentListController implements Initializable {
         tableViewDepartment.setItems(observableList);
     }
 
-    public void createDialogForm(String absoluteName, Stage parentStage) {
+    public void createDialogForm(Department obj, String absoluteName, Stage parentStage) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(absoluteName));
             Pane pane = fxmlLoader.load();
+
+            DepartmentFormController departmentFormController = fxmlLoader.getController();
+            departmentFormController.setDepartment(obj);
+            departmentFormController.updateFormData();
 
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Enter Department Data");
