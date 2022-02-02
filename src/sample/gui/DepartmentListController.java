@@ -16,6 +16,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import sample.Main;
+import sample.gui.listeners.DataChangeListener;
 import sample.gui.util.Alerts;
 import sample.gui.util.Utils;
 import sample.model.entities.Department;
@@ -26,7 +27,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class DepartmentListController implements Initializable {
+public class DepartmentListController implements Initializable, DataChangeListener {
 
     //Injeção de dependencias
     private DepartmentService service;
@@ -91,6 +92,7 @@ public class DepartmentListController implements Initializable {
             DepartmentFormController departmentFormController = fxmlLoader.getController();
             departmentFormController.setDepartment(obj);
             departmentFormController.setDepartmentService(new DepartmentService());
+            departmentFormController.subscribeDataChangedListener(this);
             departmentFormController.updateFormData();
 
             Stage dialogStage = new Stage();
@@ -107,5 +109,10 @@ public class DepartmentListController implements Initializable {
 
 
 
+    }
+
+    @Override
+    public void onDataChanged() {
+        updateTableView();
     }
 }

@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import sample.db.DbException;
+import sample.gui.listeners.DataChangeListener;
 import sample.gui.util.Alerts;
 import sample.gui.util.Constraints;
 import sample.gui.util.Utils;
@@ -17,12 +18,16 @@ import sample.model.services.DepartmentService;
 import javax.swing.*;
 import java.net.URL;
 import java.security.PublicKey;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class DepartmentFormController implements Initializable {
 
     private Department entity;
     private DepartmentService departmentService;
+    private List<DataChangeListener> dataChangeListenerList = new ArrayList<>();
+
 
     @FXML
     private TextField txtId;
@@ -46,6 +51,10 @@ public class DepartmentFormController implements Initializable {
         this.departmentService = departmentService;
     }
 
+    public void subscribeDataChangedListener(DataChangeListener dataChangeListener){
+        dataChangeListenerList.add(dataChangeListener);
+    }
+
     @FXML
     public void onBtSaveAction(ActionEvent event){
 
@@ -58,11 +67,18 @@ public class DepartmentFormController implements Initializable {
         try {
             entity = getFormData();
             departmentService.saveOrUpdate(entity);
+            notifyDataChangedListeners();
             Utils.currentStage(event).close();
         }catch (DbException e){
             Alerts.showAlert("Error saving object", "null", e.getMessage(), Alert.AlertType.ERROR);
         }
 
+    }
+
+    private void notifyDataChangedListeners() {
+        for (DataChangeListener dataChangeListener : dataChangeListenerList){
+            dataChangeListener.onDataChanged();
+        }
     }
 
     private Department getFormData() {
