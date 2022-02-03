@@ -7,8 +7,6 @@ T
 $src/sample/gui/util/Constraints.java,a\a\aabea7d3d7a4dcc71b388005d7352264f7f6a077
 J
 src/sample/Controller.java,a\9\a952ee24ccaf329067caf45d8e61416ce808b0ea
-U
-%src/sample/model/entities/Seller.java,d\5\d5a7f106b5e5d38ba604860e60846603e341618d
 \
 ,src/sample/model/entities/DepartmentDao.java,c\e\ce96dd382b196a71c903c094349fc0a15dc32010
 \
