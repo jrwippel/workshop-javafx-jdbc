@@ -13,14 +13,14 @@ import sample.gui.util.Alerts;
 import sample.gui.util.Constraints;
 import sample.gui.util.Utils;
 import sample.model.entities.Department;
+import sample.model.exceptions.ValidationException;
 import sample.model.services.DepartmentService;
 
 import javax.swing.*;
 import java.net.URL;
 import java.security.PublicKey;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.security.Security;
+import java.util.*;
 
 public class DepartmentFormController implements Initializable {
 
@@ -69,7 +69,11 @@ public class DepartmentFormController implements Initializable {
             departmentService.saveOrUpdate(entity);
             notifyDataChangedListeners();
             Utils.currentStage(event).close();
-        }catch (DbException e){
+        }
+        catch (ValidationException e){
+            setErrorMessage(e.getErrors());
+        }
+        catch (DbException e){
             Alerts.showAlert("Error saving object", "null", e.getMessage(), Alert.AlertType.ERROR);
         }
 
@@ -83,10 +87,19 @@ public class DepartmentFormController implements Initializable {
 
     private Department getFormData() {
         Department obj = new Department();
-        obj.setId(Utils.tryParseToInt(txtId.getText()));
-        obj.setName(txtName.getText());
-        return obj;
 
+        ValidationException validationException = new ValidationException("Validation Exception");
+
+        obj.setId(Utils.tryParseToInt(txtId.getText()));
+        if (txtName.getText() == null || txtName.getText().trim().equals("")){
+            validationException.addError("name", "Field can't be empty");
+        }
+        obj.setName(txtName.getText());
+
+        if (validationException.getErrors().size() > 0){
+            throw validationException;
+        }
+        return obj;
     }
 
     @FXML
@@ -111,5 +124,12 @@ public class DepartmentFormController implements Initializable {
         }
         txtId.setText(String.valueOf(entity.getId()));
         txtName.setText(entity.getName());
+    }
+
+    private void setErrorMessage(Map<String, String> errorMessage){
+        Set<String> fields = errorMessage.keySet();
+        if (fields.contains("name")){
+            labelErrorName.setText(errorMessage.get("name"));
+        }
     }
 }
