@@ -109,27 +109,27 @@ public class SellerListController implements Initializable, DataChangeListener {
     }
 
     public void createDialogForm(Seller obj, String absoluteName, Stage parentStage) {
-//        try {
-//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(absoluteName));
-//            Pane pane = fxmlLoader.load();
-//
-//            SellerFormController sellerFormController = fxmlLoader.getController();
-//            sellerFormController.setSeller(obj);
-//            sellerFormController.setSellerService(new SellerService());
-//            sellerFormController.subscribeDataChangedListener(this);
-//            sellerFormController.updateFormData();
-//
-//            Stage dialogStage = new Stage();
-//            dialogStage.setTitle("Enter Seller Data");
-//            dialogStage.setScene(new Scene(pane));
-//            dialogStage.setResizable(false);
-//            dialogStage.initOwner(parentStage);
-//            dialogStage.initModality(Modality.WINDOW_MODAL);
-//            dialogStage.showAndWait();
-//
-//        }catch (IOException e){
-//            Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), Alert.AlertType.ERROR);
-//        }
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(absoluteName));
+            Pane pane = fxmlLoader.load();
+
+            SellerFormController sellerFormController = fxmlLoader.getController();
+            sellerFormController.setSeller(obj);
+            sellerFormController.setSellerService(new SellerService());
+            sellerFormController.subscribeDataChangedListener(this);
+            sellerFormController.updateFormData();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Enter Seller Data");
+            dialogStage.setScene(new Scene(pane));
+            dialogStage.setResizable(false);
+            dialogStage.initOwner(parentStage);
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.showAndWait();
+
+        }catch (IOException e){
+            Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), Alert.AlertType.ERROR);
+        }
     }
 
     @Override
