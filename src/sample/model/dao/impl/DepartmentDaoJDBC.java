@@ -2,6 +2,7 @@ package sample.model.dao.impl;
 
 import sample.db.DB;
 import sample.db.DbException;
+import sample.db.DbIntegrityException;
 import sample.model.entities.Department;
 import sample.model.entities.DepartmentDao;
 
@@ -81,7 +82,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
                 throw new DbException("Unexpected Error: No rows affected, ID not found!");
             }
         }catch (SQLException e){
-            throw new DbException(e.getMessage());
+            throw new DbIntegrityException(e.getMessage());
         }
         finally {
             DB.closeStatement(preparedStatement);
