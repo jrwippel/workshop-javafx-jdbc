@@ -83,7 +83,6 @@ public class SellerListController implements Initializable, DataChangeListener {
     }
 
     private void initializeNodes() {
-
         tableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
         tableColumnEmail.setCellValueFactory(new PropertyValueFactory<>("email"));

@@ -9,9 +9,11 @@ J
 src/sample/Controller.java,a\9\a952ee24ccaf329067caf45d8e61416ce808b0ea
 \
 ,src/sample/model/entities/DepartmentDao.java,c\e\ce96dd382b196a71c903c094349fc0a15dc32010
-\
-,src/sample/model/dao/impl/SellerDaoJDBC.java,d\e\de5e22b1687c320347d2f16ba9bbd98a74bb03c5
 =
 db.properties,3\b\3b8c33088fa60dfa967fdedbf4c75fa52fdece9a
 \
 ,src/sample/model/dao/factory/DaoFactory.java,7\2\7287f537a8790879bcf96941050c76a42b39e673
+R
+"src/sample/gui/DepartmentForm.fxml,9\8\98d522eef392b3c6b914980682c08bd8986dff7b
+\
+,src/sample/model/dao/impl/SellerDaoJDBC.java,d\e\de5e22b1687c320347d2f16ba9bbd98a74bb03c5
