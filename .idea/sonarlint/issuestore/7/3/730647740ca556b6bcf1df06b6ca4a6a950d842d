@@ -1,0 +1,13 @@
+
+P
+java:S1118":Add a private constructor to hide the implicit public one.(¼Øûì
+W
+java:S34579"AFormat specifiers should be used instead of string concatenation.(« ÿ¹
+t
+java:S1171E"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(„ìŒòûÿÿÿÿ
+V	java:S1101"<This class has 9 parents which is greater than 5 authorized.(§ı’Üúÿÿÿÿ
+w
+java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "cell".(„ìŒòûÿÿÿÿ
+w
+java:S14881"\Immediately return this expression instead of assigning it to the temporary variable "cell".(§ı’Üúÿÿÿÿ

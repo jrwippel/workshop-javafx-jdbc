@@ -15,5 +15,13 @@ J
 ,src/sample/model/dao/factory/DaoFactory.java,7\2\7287f537a8790879bcf96941050c76a42b39e673
 R
 "src/sample/gui/DepartmentForm.fxml,9\8\98d522eef392b3c6b914980682c08bd8986dff7b
-\
-,src/sample/model/dao/impl/SellerDaoJDBC.java,d\e\de5e22b1687c320347d2f16ba9bbd98a74bb03c5
+N
+src/sample/gui/SellerList.fxml,7\7\773d2cd4e25a8861c52db569411674c053f4b2db
+`
+0src/sample/model/services/DepartmentService.java,4\d\4d971e03748d61651d999f4b9ac2bc0e48626cee
+U
+%src/sample/model/entities/Seller.java,d\5\d5a7f106b5e5d38ba604860e60846603e341618d
+N
+src/sample/gui/util/Utils.java,7\3\730647740ca556b6bcf1df06b6ca4a6a950d842d
+V
+&src/sample/gui/MainViewController.java,0\f\0fde098fddd9e4cbde4a3efe20c236342b13384c
