@@ -17,6 +17,8 @@
   Selecionar a opção ADD VM Options
   Retornar a tela de edit Configurations e no campo VM Options informar o caminho das librarys javaFX:
   --module-path C:\java-libraries\javafx-sdk-17.0.1\lib --add-modules=javafx.fxml,javafx.controls
-    
+  
+4) Executando o a aplicação fpor fora do intellj:
+java -jar --module-path C:\java-libraries\javafx-sdk-17.0.1\lib --add-modules=javafx.controls,javafx.fxml workshop-javafx-jdbc.jar    
 
 
