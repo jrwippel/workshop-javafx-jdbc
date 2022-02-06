@@ -7,8 +7,6 @@ J
 src/sample/Controller.java,a\9\a952ee24ccaf329067caf45d8e61416ce808b0ea
 \
 ,src/sample/model/entities/DepartmentDao.java,c\e\ce96dd382b196a71c903c094349fc0a15dc32010
-=
-db.properties,3\b\3b8c33088fa60dfa967fdedbf4c75fa52fdece9a
 \
 ,src/sample/model/dao/factory/DaoFactory.java,7\2\7287f537a8790879bcf96941050c76a42b39e673
 R
